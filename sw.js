@@ -1,4 +1,4 @@
-const CACHE='rfc-menu-pages-v2-'+self.registration.scope;
+const CACHE='rfc-menu-pages-v3-'+self.registration.scope;
 const FILES=['./club-logo.png','./','./index.html','./style.css','./catalogue.js','./planner.js','./app.js','./pwa.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'].map(p=>new URL(p,self.registration.scope).href);
 self.addEventListener('install',event=>{self.skipWaiting();event.waitUntil((async()=>{const cache=await caches.open(CACHE);for(const path of FILES){const response=await fetch(new Request(path,{cache:'reload',credentials:'same-origin'}));if(!response.ok||response.redirected)throw Error('Unable to cache app');await cache.put(path,response);}})());});
 self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('rfc-menu-pages-')&&key.endsWith(self.registration.scope)&&key!==CACHE)await caches.delete(key);await self.clients.claim();})()));

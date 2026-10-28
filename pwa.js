@@ -30,7 +30,7 @@ window.addEventListener('appinstalled',()=>{installState.browser='Installed by b
   const response=await fetch(new URL('manifest.webmanifest',appBase),{credentials:'include',cache:'no-store'});
   if(!response.ok||response.redirected)throw Error('Reload the app');
   const manifest=await response.json();
-  if(manifest.display!=='standalone'||manifest.scope!=='./'||manifest.start_url!=='./')throw Error('Invalid app configuration');
+  if(manifest.display!=='standalone'||new URL(manifest.scope,appBase).href!==appBase.href||new URL(manifest.start_url,appBase).href!==appBase.href||new URL(manifest.id,location.origin).pathname!==appBase.pathname)throw Error('Invalid app configuration');
   installState.configuration='Ready';
   for(const icon of manifest.icons){const image=new Image();image.src=new URL(icon.src,appBase).href;await image.decode();const size=Number(icon.sizes.split('x')[0]);if(image.naturalWidth!==size||image.naturalHeight!==size)throw Error('Icon size mismatch');}
   installState.icons='Ready';
