@@ -21,3 +21,5 @@
  .signatures{margin-top:22px;break-inside:avoid;font-size:9pt}
  .muted{font-size:8pt}
 }
+
+.products{display:block!important}.menu-group-title{font-size:16px;padding:14px 10px 8px;color:var(--navy);background:#e9f2f6;margin:12px 0 0;border-radius:10px}.subcourse-title{font-size:11px;letter-spacing:.05em;color:#45616f;margin:0;padding:10px 4px 4px}.subcourse-items{display:block}.subcourse-group{margin-bottom:12px}@media screen and (min-width:1024px){.subcourse-items{display:grid;grid-template-columns:1fr 1fr;column-gap:26px}}
