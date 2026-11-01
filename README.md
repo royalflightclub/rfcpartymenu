@@ -2,7 +2,13 @@
 App Created By: Micha Christine Dotimas
 
 Static installable app for GitHub Pages. Publish from main branch, root folder.
-Suggested repository: royalflightclub.github.io (website at https://royalflightclub.github.io/).
+Repository: royalflightclub/rfcpartymenu
+Website: https://royalflightclub.github.io/rfcpartymenu/
+
+## Updated 2026 catalogue
+Includes 195 menu options from the revised party menu, with exact names, prices, sales units and subcourses. Each platter size remains a separate product. Starters and snacks appear first; desserts and drinks appear last.
+
+Existing devices update unchanged original catalogue entries automatically. Locally edited entries remain intact and show a choice to apply the new workbook values. Custom products are kept. Items removed from the updated menu become inactive when unchanged locally. Draft lines and saved orders retain their copied prices, quantities and units. A previous catalogue snapshot is retained in full backups.
 
 ## Customer records
 No customer records, saved orders, backups, or practice data are included in this repository.
