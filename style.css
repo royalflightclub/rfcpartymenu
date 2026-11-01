@@ -5,7 +5,7 @@
 .club-logo{width:62px;height:65px;object-fit:contain;background:white;border-radius:9px;padding:4px;flex-shrink:0}.brand-copy{flex:1;min-width:0}.print-logo{display:block;width:64px;height:68px;object-fit:contain;margin:0 auto 8px}@media(max-width:560px){.club-logo{width:42px;height:46px}.brand{gap:8px}.brand h1{font-size:16px}.creator-credit{font-size:10px!important}}
 
 .print-credit{text-align:center;color:#687780;font-size:10px;margin-top:28px;border-top:1px solid #d5dfe3;padding-top:8px}@media print{
- @page{size:A4;margin:14mm 14mm 18mm;@bottom-center{content:"App Created By: Micha Christine Dotimas";font-family:Arial,sans-serif;font-size:8pt;color:#687780;vertical-align:middle}}
+ @page{size:A4;margin:14mm 14mm 18mm;@bottom-center{content:none;font-family:Arial,sans-serif;font-size:8pt;color:#687780;vertical-align:middle}}
  .print-credit{display:none!important}
  body{font-size:10pt;line-height:1.35;background:white}
  .order-sheet{padding:0}

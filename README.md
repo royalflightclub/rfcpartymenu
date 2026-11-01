@@ -19,4 +19,8 @@ Moving from the previous domain does not migrate records automatically.
 
 ## Installation and printing
 Open in Chrome or Edge, choose Install app. A4 portrait; browser Headers and footers off.
+Creator attribution appears in the app only, not on printed order forms or page footers.
 Search indexing is discouraged via robots.txt and noindex; the site is still public.
+
+## Editing and deleting
+Saved orders have Edit order and Delete order controls. Edits retain the order ID and store the earlier version in the full backup. Catalogue products have Edit and Delete controls. Deleted products can be restored from Deleted catalogue items; deleted orders can be restored from Recently deleted. Existing order lines retain their copied product details when a catalogue product is changed or deleted.
