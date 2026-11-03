@@ -1,11 +1,11 @@
 (function(root){
 const sections=['Starters','Main course','Rice & sides','Dessert','Drinks','Kids menu','Other'];
 const units=['FLASK','PORTION','PIECE','BOTTLE','GLASS','POT','CAN','KILOGRAM','SET','SMALL PLATTER','MEDIUM PLATTER','LARGE PLATTER','BOX'];
-const blank=()=>({title:'Party menu',client:'',account:'',eventDate:'',eventTime:'',venue:'',distribution:'',pax:'',allocation:'whole',notes:'',status:'Draft',extra:0,discount:0,lines:[]});
+const blank=()=>({title:'Party menu',client:'',account:'',eventDate:'',eventTime:'',venue:'',distribution:'KITCHEN/SERVICE',pax:'',allocation:'whole',notes:'',status:'Draft',extra:0,discount:0,lines:[]});
 const has=v=>v!==''&&v!==null&&v!==undefined;
 const number=v=>has(v)&&Number.isFinite(Number(v));
 function sectionFor(p){if(p.course==='DRINKS MENU')return'Drinks';if(['DESSERTS','CAKES','PASTRIES'].includes(p.category))return'Dessert';if(['BURGERS & SANDWICHES','COLD APPETIZERS','HOT APPETIZERS','SOUP'].includes(p.category))return'Starters';if(['RICE SELECTIONS','VEGETABLE DISHES','SIDE DISHES'].includes(p.category))return'Rice & sides';return'Main course';}
-function addLine(p){return{productId:p.id,sourceNo:p.sourceNo||'',name:p.name,unit:p.unit,price:p.price,section:sectionFor(p),category:p.category,course:p.course,quantity:'',manual:p.unit!=='PORTION',notes:''};}
+function addLine(p){return{productId:p.id,sourceNo:p.sourceNo||'',name:p.name,arabicName:p.arabicName||'',unit:p.unit,price:p.price,section:sectionFor(p),category:p.category,course:p.course,quantity:'',manual:p.unit!=='PORTION',notes:''};}
 function recommend(order,line){if(line.unit!=='PORTION'||!number(order.pax)||Number(order.pax)<1)return null;const pool=order.lines.filter(l=>l.unit==='PORTION'&&(order.allocation==='whole'||l.section===line.section));return pool.length?Math.ceil(Number(order.pax)/pool.length):null;}
 function quantity(order,line){return line.manual?number(line.quantity)?Number(line.quantity):null:recommend(order,line);}
 function lineResult(order,line){const q=quantity(order,line),valid=q!==null&&q>0&&Number.isFinite(q)&&(line.unit==='KILOGRAM'||Number.isInteger(q));return {quantity:q,recommended:recommend(order,line),amount:valid&&number(line.price)&&Number(line.price)>=0?Math.round(Math.round(Number(line.price)*1000)*q):null};}

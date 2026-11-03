@@ -40,3 +40,6 @@
  .print-frame>tbody>tr>td{padding:0;border:0;vertical-align:top}
  .order-sheet{max-width:none;margin:0;padding:0}
 }
+
+.arabic{display:inline-block;font-family:Tahoma,Arial,sans-serif;font-weight:400;font-size:.95em;direction:rtl;unicode-bidi:isolate;margin-inline-start:.35em}.dish-arabic{font-size:1em}.print-frame{overflow-wrap:anywhere}input[type=date]{min-width:0;width:100%}
+@media print{table.print-frame{width:calc(100% - 1in);margin:0 .5in}.print-frame>.print-top-space>tr>td,.print-frame>.print-bottom-space>tr>td{height:.5in}.sheet-meta{font-size:8.5pt}.order-sheet .arabic{font-size:.95em}.sheet-section table th{font-size:8pt}.sheet-section table td{font-size:8.5pt}.sheet-section table td small{font-size:7.5pt}}
