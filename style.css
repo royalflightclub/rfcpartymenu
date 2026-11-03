@@ -23,3 +23,20 @@
 }
 
 .products{display:block!important}.menu-group-title{font-size:16px;padding:14px 10px 8px;color:var(--navy);background:#e9f2f6;margin:12px 0 0;border-radius:10px}.subcourse-title{font-size:11px;letter-spacing:.05em;color:#45616f;margin:0;padding:10px 4px 4px}.subcourse-items{display:block}.subcourse-group{margin-bottom:12px}@media screen and (min-width:1024px){.subcourse-items{display:grid;grid-template-columns:1fr 1fr;column-gap:26px}}
+
+/* Zero page margins suppress the browser-generated print decorations.
+   Repeating table bands restore the document's own top and bottom space. */
+.print-frame{font:inherit}.print-frame>thead,.print-frame>tfoot{display:none}.print-frame>tbody>tr>td{padding:0;border:0;font:inherit}
+@media print{
+ @page{size:A4;margin:0;@top-left{content:none}@top-center{content:none}@top-right{content:none}@bottom-left{content:none}@bottom-center{content:none}@bottom-right{content:none}}
+ html,body{margin:0!important;padding:0!important;min-height:0}
+ main{margin:0!important;padding:0!important;width:100%;max-width:none}
+ table.print-frame{width:calc(100% - 28mm);margin:0 14mm;table-layout:fixed;border:0;border-collapse:collapse}
+ .print-frame>.print-top-space{display:table-header-group}
+ .print-frame>.print-bottom-space{display:table-footer-group}
+ .print-frame>.print-top-space>tr>td{height:14mm;padding:0;border:0;background:white}
+ .print-frame>.print-bottom-space>tr>td{height:18mm;padding:0;border:0;background:white}
+ .print-frame>tbody>tr{break-inside:auto;page-break-inside:auto}
+ .print-frame>tbody>tr>td{padding:0;border:0;vertical-align:top}
+ .order-sheet{max-width:none;margin:0;padding:0}
+}
